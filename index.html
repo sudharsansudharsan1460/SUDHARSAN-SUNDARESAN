@@ -3,270 +3,185 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Sudharsan S, student and project builder. Projects, recognition and contact.">
-<title>Sudharsan S Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<title>Sudharsan S | AI & Data Science Student</title>
+<meta name="description" content="Sudharsan S, second-year B.Tech AI & Data Science student in Coimbatore. Projects, hackathons and certifications. Open to AI/ML internships.">
 <style>
-/* Layout concept: one narrow, left-aligned column. Big type, hairline rules, projects as plain rows, almost no chrome. */
-:root {
-  --bg: #FBFCFC;
-  --fg: #101615;
-  --muted: #56615F;
-  --line: #E1E6E5;
-  --accent: #0A7C72;
-  --accent-soft: #E3F3F1;
-  --accent-fg: #FFFFFF;
-  --font-sans: 'Hanken Grotesk', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0D1211; --fg: #EEF3F2; --muted: #9AA7A4; --line: #232C2B;
-    --accent: #4FD1C2; --accent-soft: #12302C; --accent-fg: #07201D;
-    color-scheme: dark;
+  :root{
+    --bg:#0b0f14; --card:#121922; --line:#1f2a37; --text:#e6edf3; --muted:#93a1b1;
+    --accent:#4ade80; --accent2:#22d3ee;
   }
-}
-:root[data-theme="dark"] {
-  --bg: #0D1211; --fg: #EEF3F2; --muted: #9AA7A4; --line: #232C2B;
-  --accent: #4FD1C2; --accent-soft: #12302C; --accent-fg: #07201D;
-  color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  padding-block: 0 5rem;
-  padding-inline: clamp(20px, 5vw, 48px);
-}
-.col { max-width: 720px; margin-inline: auto; }
-a { color: inherit; text-underline-offset: 4px; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; }
-a:hover { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-h1, h2, h3, p, ul { margin: 0; }
-h1, h2, h3 { text-wrap: balance; }
-ul { padding: 0; list-style: none; }
-.label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-
-/* nav */
-.nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1.5rem; padding-block: 1.5rem; }
-.nav .mark { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
-.nav nav { display: flex; gap: 1.5rem; font-size: 0.9375rem; color: var(--muted); }
-.nav nav a { text-decoration: none; }
-.nav nav a:hover { color: var(--accent); }
-
-/* hero */
-.hero { padding-block: 5rem 4.5rem; }
-.hero h1 { font-size: clamp(2.75rem, 9vw, 5rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; }
-.hero .line { margin-top: 1.5rem; font-size: clamp(1.25rem, 3.2vw, 1.625rem); line-height: 1.4; max-width: 24ch; letter-spacing: -0.01em; }
-.facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.75rem; color: var(--muted); font-size: 0.9375rem; }
-.facts li + li::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--line); margin-right: 1.5rem; vertical-align: middle; }
-.facts strong { color: var(--fg); font-weight: 600; }
-.cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
-.btn { display: inline-block; padding: 0.75rem 1.3rem; border-radius: 999px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; border: 1.5px solid var(--accent); }
-.btn.primary { background: var(--accent); color: var(--accent-fg); }
-.btn.primary:hover { color: var(--accent-fg); filter: brightness(1.1); }
-.btn.ghost { color: var(--fg); border-color: var(--line); }
-.btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-/* sections */
-section { padding-block: 3.5rem; border-top: 1px solid var(--line); }
-section > .label { display: block; margin-bottom: 2rem; }
-
-/* projects */
-.project { padding-block: 1.75rem; border-top: 1px solid var(--line); }
-.project:first-of-type { padding-top: 0; border-top: 0; }
-.project h3 { font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
-.project p { margin-top: 0.6rem; color: var(--muted); max-width: 56ch; }
-.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-top: 1rem; font-size: 0.9375rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.tag { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); padding: 0.15rem 0.6rem; border: 1px solid var(--line); border-radius: 999px; }
-.tag.note { color: var(--accent); background: var(--accent-soft); border-color: transparent; }
-.project .go { font-weight: 600; }
-.more { margin-top: 1.5rem; color: var(--muted); font-size: 0.9375rem; }
-
-/* about + lists */
-.about p { font-size: 1.1875rem; line-height: 1.6; max-width: 36ch; letter-spacing: -0.005em; }
-.about p + p { margin-top: 1rem; color: var(--muted); font-size: 1.0625rem; max-width: 52ch; }
-.skills { display: grid; gap: 1rem; margin-top: 2rem; }
-.skills div { display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr); gap: 0.25rem 1.5rem; font-size: 0.9375rem; }
-.skills dt { margin: 0; }
-.skills dd { margin: 0; color: var(--muted); }
-dl { margin: 0; }
-
-.wins li { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 0.15rem 1.5rem; padding-block: 0.9rem; border-top: 1px solid var(--line); }
-.wins li:first-child { border-top: 0; padding-top: 0; }
-.wins .what { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); padding-top: 0.2rem; }
-.wins strong { font-weight: 600; }
-.wins .win { color: var(--accent); }
-
-/* contact */
-.contact h2 { font-size: clamp(1.875rem, 6vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; max-width: 18ch; }
-.contact .label { margin: 0 0 1.25rem; }
-.email { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.9rem; margin-top: 1.75rem; }
-.email code { font-family: var(--font-mono); font-size: 1rem; padding: 0.55rem 0.85rem; background: var(--accent-soft); border-radius: 8px; overflow-wrap: anywhere; user-select: all; }
-.email button { font: inherit; font-size: 0.9375rem; font-weight: 600; padding: 0.55rem 1.05rem; border-radius: 999px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; }
-.email button:hover { background: var(--accent); color: var(--accent-fg); }
-.social { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.75rem; font-size: 0.9375rem; }
-
-footer { padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; font-size: 0.8125rem; color: var(--muted); }
-
-@media (max-width: 560px) {
-  .hero { padding-block: 3rem 3rem; }
-  .skills div, .wins li { grid-template-columns: minmax(0, 1fr); }
-  .facts li + li::before { display: none; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-html{color-scheme:light dark}
-body{margin:0}
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f7f9fb; --card:#ffffff; --line:#e3e8ee; --text:#0f1720; --muted:#566272; --accent:#0f9d58; --accent2:#0891b2; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+  nav .logo{font-weight:700;color:var(--text)}
+  nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+  nav ul a{color:var(--muted);font-size:15px}
+  nav ul a:hover{color:var(--text);text-decoration:none}
+  header.hero{padding:88px 0 56px}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.4rem);margin:0 0 12px;letter-spacing:-.02em}
+  .hero p.lead{font-size:1.2rem;color:var(--muted);margin:0 0 20px;max-width:620px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+  .tags li{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 14px;font-size:14px;color:var(--muted)}
+  .btn{display:inline-block;padding:10px 20px;border-radius:10px;font-weight:600;margin:0 10px 10px 0}
+  .btn.primary{background:var(--accent);color:#04130a}
+  .btn.ghost{border:1px solid var(--line);color:var(--text)}
+  .btn:hover{text-decoration:none;opacity:.9}
+  section{padding:48px 0}
+  h2{font-size:1.6rem;margin:0 0 24px;letter-spacing:-.01em}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}
+  @media(max-width:480px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{margin:0 0 6px;font-size:1.15rem}
+  .card p{margin:0 0 10px;color:var(--muted);font-size:15px}
+  .card .role{color:var(--text);font-size:14px}
+  .card .role b{color:var(--accent)}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;padding:0;list-style:none}
+  .stack li{font-size:12.5px;padding:2px 10px;border-radius:6px;background:color-mix(in srgb,var(--accent2) 14%,transparent);color:var(--accent2)}
+  .links a{margin-right:16px;font-size:14.5px;font-weight:600}
+  .note{color:var(--muted);font-size:14px;margin-top:18px}
+  .skills{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .skills .card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+  ul.plain{margin:0;padding-left:18px}
+  ul.plain li{margin:8px 0;color:var(--muted)}
+  ul.plain li b{color:var(--text)}
+  .contact{text-align:center}
+  .contact .card{padding:40px 20px}
+  .contact h2{margin-bottom:10px}
+  code.mail{display:inline-block;margin:10px 0 16px;padding:6px 14px;border-radius:8px;background:var(--bg);border:1px solid var(--line);font-size:15px}
+  footer{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:14px}
 </style>
-
-
 </head>
 <body>
-<div class="col">
-  <header class="nav">
-    <a class="mark" href="#top">Sudharsan.</a>
-    <nav aria-label="Sections">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main id="top">
-    <div class="hero">
-      <h1>Sudharsan S</h1>
-      <p class="line">I build AI apps with LLMs, RAG and agents.</p>
-      <ul class="facts">
-        <li>B.Tech AI &amp; Data Science</li>
-        <li>Hackathon winner</li>
-        <li>Coimbatore</li>
-      </ul>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
-    </div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Sudharsan.</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#recognition">Recognition</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <section id="projects" aria-labelledby="projects-h">
-      <h2 id="projects-h" class="label">Selected projects</h2>
+<main id="top">
+<header class="hero">
+  <div class="wrap">
+    <h1>Sudharsan S</h1>
+    <p class="lead">I build AI apps with Python, FastAPI and React, and I'm now going deeper into RAG and AI agents.</p>
+    <ul class="tags">
+      <li>B.Tech AI &amp; Data Science, 2nd year</li>
+      <li>Rathinam Technical Campus</li>
+      <li>Coimbatore, India</li>
+    </ul>
+    <a class="btn primary" href="#projects">See my projects</a>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+  </div>
+</header>
 
-      <article class="project">
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <div class="grid">
+
+      <article class="card">
         <h3>PhytoScan</h3>
-        <p>A plant health analysis project that examines plant images to help identify possible plant health issues.</p>
-        <div class="meta">
-          <ul class="tags"><li class="tag">Python</li></ul>
+        <p>An AI-powered plant image analyzer. You scan or upload a leaf, stem, fruit or flower photo, and it helps identify possible plant health issues. Presented at the YUDHISTRA Project Expo and developed further at the Future Forge Buildathon 2026 (Vels University).</p>
+        <p class="role"><b>My role:</b> Data collector. I gathered the plant image data the team used to build and test the analyzer.</p>
+        <ul class="stack"><li>Python</li><li>Computer vision</li></ul>
+        <div class="links">
+          <!-- ADD: <a href="YOUR_DEMO_LINK">Live demo</a> and <a href="YOUR_REPO_LINK">View code</a> -->
         </div>
       </article>
 
-      <article class="project">
+      <article class="card">
         <h3>TOOFAN-Now</h3>
-        <p>A thunderstorm early-warning system for India with a live map and alerts in English, Hindi, Bengali and Tamil. Built for Smart India Hackathon 2026.</p>
-        <div class="meta">
-          <ul class="tags"><li class="tag">FastAPI</li><li class="tag">React</li><li class="tag note">Synthetic data demo</li></ul>
-          <a class="go" href="https://26084.vercel.app">Live demo</a>
-          <a class="go" href="https://github.com/rangapprasathsri-web/26084">View code</a>
+        <p>A thunderstorm early-warning system for India with a live map and alerts in English, Hindi, Bengali and Tamil. Built for Smart India Hackathon 2026. The demo runs on synthetic data.</p>
+        <p class="role"><b>My role:</b> Dataset collection and the presentation (PPT) for our Smart India Hackathon submission.</p>
+        <ul class="stack"><li>FastAPI</li><li>React</li><li>Synthetic data demo</li></ul>
+        <div class="links">
+          <a href="https://26084.vercel.app">Live demo</a>
+          <a href="https://github.com/rangapprasathsri-web/26084">Team repo</a>
         </div>
       </article>
 
-      <article class="project">
+      <article class="card">
         <h3>AI_GO</h3>
         <p>A tool that picks the right image quality for each purpose and shows how much computing power that saves.</p>
-        <div class="meta">
-          <ul class="tags"><li class="tag">FastAPI</li><li class="tag">Python</li><li class="tag note">Demo images</li></ul>
-          <a class="go" href="https://github.com/rangapprasathsri-web/AI_GO">View code</a>
+        <p class="role"><b>My role:</b> Team member. I helped with testing the tool on sample images and with the project documentation.</p>
+        <ul class="stack"><li>FastAPI</li><li>Python</li><li>Demo images</li></ul>
+        <div class="links">
+          <a href="https://github.com/rangapprasathsri-web/AI_GO">Team repo</a>
         </div>
       </article>
 
-      <article class="project">
+      <article class="card">
         <h3>Handovernote</h3>
         <p>Turns a shift's tickets and incidents into a clear handover note you can download as a PDF.</p>
-        <div class="meta">
-          <ul class="tags"><li class="tag">TypeScript</li><li class="tag">React</li></ul>
-          <a class="go" href="https://handovernote.vercel.app">Live demo</a>
-          <a class="go" href="https://github.com/rangapprasathsri-web/Handovernote">View code</a>
+        <p class="role"><b>My role:</b> Team member. I helped with testing the handover flow with sample tickets and with the project documentation.</p>
+        <ul class="stack"><li>TypeScript</li><li>React</li></ul>
+        <div class="links">
+          <a href="https://handovernote.vercel.app">Live demo</a>
+          <a href="https://github.com/rangapprasathsri-web/Handovernote">Team repo</a>
         </div>
       </article>
 
-      <p class="more">Earlier: a spam detector and Vasool Drive (microfinance collections). More on <a href="https://github.com/rangapprasathsri-web">GitHub</a>.</p>
-    </section>
+    </div>
+    <p class="note">These are team projects built with my teammate Srirangapprasath, so the code lives in a shared team repository. Earlier work: a spam detector and Vasool Drive (microfinance collections).</p>
+  </div>
+</section>
 
-    <section id="about" class="about" aria-labelledby="about-h">
-      <h2 id="about-h" class="label">About</h2>
-      <p>I'm a third-semester AI and Data Science student at Rathinam Technical Campus.</p>
-      <p>I like building things that work end to end, and I say plainly what a project can and can't do. Right now I'm going deeper into RAG and AI agents.</p>
-      <dl class="skills">
-        <div><dt class="label">Languages</dt><dd>Python</dd></div>
-        <div><dt class="label">AI</dt><dd>PyTorch, scikit-learn, LLM tool calling, NLP</dd></div>
-        <div><dt class="label">Build</dt><dd>FastAPI, React, Node.js, Docker, Git</dd></div>
-      </dl>
-    </section>
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p style="color:var(--muted);max-width:680px">I'm a second-year (third-semester) AI and Data Science student at Rathinam Technical Campus, Coimbatore. I like building things that work end to end, and I say plainly what a project can and can't do. I'm looking for an AI/ML or data internship where I can keep building and learning.</p>
+    <div class="skills">
+      <div class="card"><h3>Languages</h3>Python, TypeScript</div>
+      <div class="card"><h3>AI &amp; Data</h3>scikit-learn, PyTorch, NLP, Pandas, Excel analytics</div>
+      <div class="card"><h3>Build</h3>FastAPI, React, Git</div>
+      <div class="card"><h3>Learning now</h3>RAG, AI agents, MLOps</div>
+    </div>
+  </div>
+</section>
 
-    <section aria-labelledby="wins-h">
-      <h2 id="wins-h" class="label">Recognition</h2>
-      <ul class="wins">
-        <li><span class="what">Winner</span><span><strong class="win">Agentic and Generative AI Hackathon</strong>, Rathinam Technical Campus</span></li>
-        <li><span class="what">SIH 2026</span><span>Smart India Hackathon, built TOOFAN-Now</span></li>
-        <li><span class="what">Certificates</span><span>IBM, Microsoft, Cisco and LinkedIn Learning courses in RAG, generative AI, machine learning and cybersecurity</span></li>
-      </ul>
-    </section>
+<section id="recognition">
+  <div class="wrap">
+    <h2>Recognition &amp; certifications</h2>
+    <ul class="plain">
+      <li><b>Winner, Agentic and Generative AI Hackathon</b> at Rathinam Technical Campus</li>
+      <li><b>Smart India Hackathon 2026:</b> submitted TOOFAN-Now with my team</li>
+      <li><b>Bharatiya Antariksh Hackathon 2026</b> (ISRO, powered by Hack2skill): idea submission and participation</li>
+      <li><b>Future Forge Buildathon 2026</b> at Vels Institute of Science, Technology &amp; Advanced Studies</li>
+      <li><b>YUDHISTRA Project Expo:</b> presented PhytoScan, team recognised with an award</li>
+      <li><b>Certifications:</b> AWS Foundations of Prompt Engineering, Deloitte Data Analytics Job Simulation, Cisco Data Science Essentials with Python, Infosys Springboard Python, NPTEL Joy of Computing using Python (IIT Madras), Microsoft Business Analytics with Excel, and LinkedIn Learning paths in AI/ML, generative AI, LLMs and MLOps</li>
+    </ul>
+  </div>
+</section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-h">
-      <p class="label">Contact</p>
-      <h2 id="contact-h">Looking for an AI/ML intern? Let's talk.</h2>
-      <div class="email">
-        <code id="email-text">sudharsansudharsan1460@gmail.com</code>
-        <button id="copy-email" type="button">Copy address</button>
-      </div>
-      <div class="social">
-        <a href="https://www.linkedin.com/in/srirangapprasath-i-167985383">LinkedIn</a>
-        <a href="https://github.com/rangapprasathsri-web">GitHub</a>
-      </div>
-    </section>
-  </main>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="card">
+      <h2>Looking for an AI/ML intern? Let's talk.</h2>
+      <code class="mail" id="mail">sudharsansudharsan1460@gmail.com</code><br>
+      <a class="btn primary" href="mailto:sudharsansudharsan1460@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/sudharsan-s-287a68379/">LinkedIn</a>
+      <!-- ADD your own GitHub button here once you have your profile link:
+      <a class="btn ghost" href="https://github.com/YOUR-USERNAME">GitHub</a> -->
+    </div>
+  </div>
+</section>
+</main>
 
-  <footer>
-    <span>© 2026 Sudharsan S</span>
-    <span>Coimbatore, India</span>
-  </footer>
-</div>
-
-<script>
-(function () {
-  var btn = document.getElementById('copy-email');
-  var el = document.getElementById('email-text');
-  if (!btn || !el) return;
-  var timer;
-  function reset() { btn.textContent = 'Copy address'; }
-  function selectText() {
-    try {
-      var r = document.createRange();
-      r.selectNodeContents(el);
-      var s = window.getSelection();
-      s.removeAllRanges();
-      s.addRange(r);
-    } catch (e) {}
-  }
-  btn.addEventListener('click', function () {
-    var text = el.textContent.trim();
-    clearTimeout(timer);
-    var done = function (msg) { btn.textContent = msg; timer = setTimeout(reset, 2200); };
-    try {
-      navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { selectText(); done('Selected, press Ctrl+C'); });
-    } catch (e) {
-      selectText();
-      done('Selected, press Ctrl+C');
-    }
-  });
-})();
-</script>
+<footer>&copy; 2026 Sudharsan S &middot; Coimbatore, India</footer>
 
 </body>
 </html>
